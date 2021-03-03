@@ -1,11 +1,13 @@
+const baseUrl = 'https://reactventure.herokuapp.com'
+
 export const signup = (userData) => {
    return dispatch => {
-      fetch(`https://reactventure-backend.herokuapp.com/api/v1/users`, {
+      fetch(`${baseUrl}/api/v1/users`, {
          method: 'POST',
          headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
             'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS'
+            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS',
          },
          credentials: "include",
          body: JSON.stringify({user: userData})
@@ -33,7 +35,7 @@ export const signup = (userData) => {
 
 export const login = (userData, history) => {
    return dispatch => {
-      fetch("https://reactventure-backend.herokuapp.com/api/v1/sessions", {
+      fetch(`${baseUrl}/api/v1/sessions`, {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
@@ -64,7 +66,7 @@ export const login = (userData, history) => {
 
 export const checkLoggedIn = () => {
    return dispatch => {
-      fetch(`https://reactventure-backend.herokuapp.com/api/v1/logged_in`, {
+      fetch(`${baseUrl}/api/v1/logged_in`, {
          credentials: 'include'
       })
       .then(res => res.json())
@@ -79,8 +81,8 @@ export const checkLoggedIn = () => {
 }
 
 export const logout = () => {
-   return dispatch => {
-      fetch(`https://reactventure-backend.herokuapp.com/api/v1/logout`, {
+   return dispatch => {"${baseUrl}/api/v1/sessions"
+      fetch(`${baseUrl}/api/v1/logout`, {
          method: "DELETE",
          credentials: "include"
       })
@@ -91,7 +93,7 @@ export const logout = () => {
 
 export const save = (user, hist=[], inventory=[], knownObjects=['crowbar','door','desk','drawer','paper','candle','chest'], brokenObjects=[], uniqueEvents={openedChest: false, meltedIce: false, completedGame: false}) => {
    return dispatch => {
-      fetch(`https://reactventure-backend.herokuapp.com/api/v1/users/${user.id}`, {
+      fetch(`${baseUrl}/api/v1/users/${user.id}`, {
          method: 'POST',
          headers: {
             "Content-Type": "application/json",
@@ -126,8 +128,9 @@ export const save = (user, hist=[], inventory=[], knownObjects=['crowbar','door'
 
 export const retrieve = (user) => {
    console.log('Retrieve initiated.')
+   console.log(user)
    return dispatch => {
-      fetch(`https://reactventure-backend.herokuapp.com/api/v1/users/${user.id}`, {
+      fetch(`${baseUrl}/api/v1/users/${user.id}`, {
          credentials: "include",
          method: "GET",
          headers: {
