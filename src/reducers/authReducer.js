@@ -4,7 +4,8 @@ export const authReducer = (state={loggedIn: false, currentUser: {}}, action) =>
          return {
             ...state,
             loggedIn: action.payload.loggedIn,
-            currentUser: action.payload.currentUser
+            currentUser: action.payload.currentUser,
+            uniqueEvents: action.payload.uniqueEvents
          }
       case "UPDATED_LOGIN":
          return {signInData: {

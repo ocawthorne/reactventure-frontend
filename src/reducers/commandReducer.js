@@ -53,7 +53,6 @@ export const commandReducer = (state=defaultState, action) => {
       case 'UPDATED_COMMAND':
          return {...state, command: action.command}
       case 'SUBMITTED_COMMAND':
-         console.log(state.currentUser)
          if (state.currentUser.uniqueEvents.completedGame) {
             return aHNC(state, `Another room lies ahead, but my eyes haven't adapted to the light yet\nTO BE CONTINUED...`)
          }
