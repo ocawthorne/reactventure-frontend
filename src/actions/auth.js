@@ -1,6 +1,6 @@
 export const signup = (userData) => {
    return dispatch => {
-      fetch(`http://http://reactventure-backend.herokuapp.com/api/v1/users`, {
+      fetch(`http://reactventure-backend.herokuapp.com/api/v1/users`, {
          method: 'POST',
          headers: {
             'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ export const signup = (userData) => {
 
 export const login = (userData, history) => {
    return dispatch => {
-      fetch("http://http://reactventure-backend.herokuapp.com/api/v1/sessions", {
+      fetch("http://reactventure-backend.herokuapp.com/api/v1/sessions", {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
@@ -60,7 +60,7 @@ export const login = (userData, history) => {
 
 export const checkLoggedIn = () => {
    return dispatch => {
-      fetch(`http://http://reactventure-backend.herokuapp.com/api/v1/logged_in`, {
+      fetch(`http://reactventure-backend.herokuapp.com/api/v1/logged_in`, {
          credentials: 'include'
       })
       .then(res => res.json())
@@ -76,7 +76,7 @@ export const checkLoggedIn = () => {
 
 export const logout = () => {
    return dispatch => {
-      fetch(`http://http://reactventure-backend.herokuapp.com/api/v1/logout`, {
+      fetch(`http://reactventure-backend.herokuapp.com/api/v1/logout`, {
          method: "DELETE",
          credentials: "include"
       })
@@ -87,7 +87,7 @@ export const logout = () => {
 
 export const save = (user, hist=[], inventory=[], knownObjects=['crowbar','door','desk','drawer','paper','candle','chest'], brokenObjects=[], uniqueEvents={openedChest: false, meltedIce: false, completedGame: false}) => {
    return dispatch => {
-      fetch(`http://http://reactventure-backend.herokuapp.com/api/v1/users/${user.id}`, {
+      fetch(`http://reactventure-backend.herokuapp.com/api/v1/users/${user.id}`, {
          method: 'POST',
          headers: {
             "Content-Type": "application/json",
@@ -122,7 +122,7 @@ export const retrieve = (user) => {
    console.log('Retrieve initiated.')
    console.log(user)
    return dispatch => {
-      fetch(`http://http://reactventure-backend.herokuapp.com/api/v1/users/${user.id}`, {
+      fetch(`http://reactventure-backend.herokuapp.com/api/v1/users/${user.id}`, {
          credentials: "include",
          method: "GET",
          headers: {
