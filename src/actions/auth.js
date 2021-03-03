@@ -126,7 +126,6 @@ export const save = (user, hist=[], inventory=[], knownObjects=['crowbar','door'
 
 export const retrieve = (user) => {
    console.log('Retrieve initiated.')
-   console.log(user)
    return dispatch => {
       fetch(`https://reactventure-backend.herokuapp.com/api/v1/users/${user.id}`, {
          credentials: "include",

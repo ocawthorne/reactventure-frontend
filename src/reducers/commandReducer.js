@@ -193,7 +193,7 @@ export const commandReducer = (state=defaultState, action) => {
       case "USER_HISTORY_FETCH_SUCCESS":
          return {
             ...state,
-            currentUser: action.payload.user,
+            currentUser: action.payload.currentUser,
             userHistory: action.payload.userHistory,
             userObjects: action.payload.userObjects,
             knownObjects: action.payload.knownObjects,
