@@ -49,7 +49,6 @@ function aHNC(state, notification) { // Add History No Change (aHNC)
 }
 
 export const commandReducer = (state=defaultState, action) => {
-   debugger
    switch (action.type) {
       case 'UPDATED_COMMAND':
          return {...state, command: action.command}

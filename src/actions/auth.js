@@ -93,7 +93,7 @@ export const logout = () => {
 
 export const save = (user, hist=[], inventory=[], knownObjects=['crowbar','door','desk','drawer','paper','candle','chest'], brokenObjects=[], uniqueEvents={openedChest: false, meltedIce: false, completedGame: false}) => {
    return dispatch => {
-      fetch(`${baseUrl}/api/v1/users/${user.id}`, {
+      fetch(`https://reactventure-backend.herokuapp.com/api/v1/users/${user.id}`, {
          method: 'POST',
          headers: {
             "Content-Type": "application/json",
