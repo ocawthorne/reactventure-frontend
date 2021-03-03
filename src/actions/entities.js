@@ -16,7 +16,7 @@ export const getAllEntities = () => {
    return dispatch => {
       dispatch({type: 'LOADING_ENTITIES'})
       return (
-         fetch("http://http://reactventure.herokuapp.com/api/v1/entities", {
+         fetch("http://http://reactventure-backend.herokuapp.com/api/v1/entities", {
          credentials: "include",
          method: "GET",
          headers: {
@@ -39,7 +39,7 @@ export const getAllEntityInteractions = () => {
    return dispatch => {
       dispatch({type: 'LOADING_ENTITIES'})
       return (
-         fetch("http://http://reactventure.herokuapp.com/api/v1/entity_interactions", {
+         fetch("http://http://reactventure-backend.herokuapp.com/api/v1/entity_interactions", {
          credentials: "include",
          method: "GET",
          headers: {
