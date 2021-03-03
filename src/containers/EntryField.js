@@ -33,7 +33,8 @@ const mapStateToProps = state => {
       userObjects: state.commands.userObjects,
       knownObjects: state.commands.knownObjects,
       userHistory: state.commands.userHistory,
-      command: state.commands.command
+      command: state.commands.command,
+      uniqueEvents: state.auth.currentUser.uniqueEvents
    }
 }
 
