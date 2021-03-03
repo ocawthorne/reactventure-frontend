@@ -21,8 +21,7 @@ export const getAllEntities = () => {
          method: "GET",
          headers: {
             "Accept": "application/json",
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS'
+            'Access-Control-Allow-Origin': true
          }
          })
          .then(r => r.json())
@@ -45,8 +44,7 @@ export const getAllEntityInteractions = () => {
          method: "GET",
          headers: {
             "Content-Type": "application/json",
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS'
+            'Access-Control-Allow-Origin': true
          }
          })
          .then(r => r.json())
