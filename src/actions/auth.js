@@ -1,4 +1,4 @@
-const baseUrl = 'https://reactventure.herokuapp.com'
+const baseUrl = 'https://reactventure-backend.herokuapp.com'
 
 export const signup = (userData) => {
    return dispatch => {
