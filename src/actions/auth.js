@@ -3,7 +3,7 @@ const baseUrl = 'https://reactventure-backend.herokuapp.com'
 export const signup = (userData) => {
    return dispatch => {
       fetch(`${baseUrl}/api/v1/users`, {
-         method: 'POST',
+         method: "POST",
          headers: {
             "Content-Type": "application/json",
             'Access-Control-Allow-Origin': '*',
@@ -102,13 +102,13 @@ export const save = (user, hist=[], inventory=[], knownObjects=['crowbar','door'
             Accept: "application/json"
          },
          credentials: 'include',
-         body: JSON.stringify({
-            history: hist,
-            inventory: inventory,
-            known_objects: knownObjects,
-            broken_objects: brokenObjects,
-            unique_events: uniqueEvents
-         })
+         body: {
+            "history": hist,
+            "inventory": inventory,
+            "known_objects": knownObjects,
+            "broken_objects": brokenObjects,
+            "unique_events": JSON.stringify(uniqueEvents)
+         }
       })
       .then(res => res.json())
       .then(data => {
