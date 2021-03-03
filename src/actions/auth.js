@@ -81,7 +81,7 @@ export const checkLoggedIn = () => {
 }
 
 export const logout = () => {
-   return dispatch => {`${baseUrl}/api/v1/sessions`
+   return dispatch => {
       fetch(`${baseUrl}/api/v1/logout`, {
          method: "DELETE",
          credentials: "include"
