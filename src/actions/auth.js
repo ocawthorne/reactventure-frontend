@@ -97,18 +97,15 @@ export const save = (user, hist=[], inventory=[], knownObjects=['crowbar','door'
          method: 'POST',
          headers: {
             "Content-Type": "application/json",
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS',
-            Accept: "application/json"
          },
          credentials: 'include',
-         body: {
-            "history": hist,
-            "inventory": inventory,
-            "known_objects": knownObjects,
-            "broken_objects": brokenObjects,
-            "unique_events": JSON.stringify(uniqueEvents)
-         }
+         body: JSON.stringify({
+            history: hist,
+            inventory: inventory,
+            known_objects: knownObjects,
+            broken_objects: brokenObjects,
+            unique_events: uniqueEvents
+         })
       })
       .then(res => res.json())
       .then(data => {
