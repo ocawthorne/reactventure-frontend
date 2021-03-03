@@ -21,7 +21,7 @@ export const getAllEntities = () => {
          method: "GET",
          headers: {
             "Accept": "application/json",
-            'Access-Control-Allow-Origin': 'https://reactventure.herokuapp.com',
+            'Access-Control-Allow-Origin': '*',
          }
          })
          .then(r => r.json())
@@ -44,7 +44,7 @@ export const getAllEntityInteractions = () => {
          method: "GET",
          headers: {
             "Content-Type": "application/json",
-            'Access-Control-Allow-Origin': 'https://reactventure.herokuapp.com'
+            'Access-Control-Allow-Origin': '*'
          }
          })
          .then(r => r.json())

@@ -4,7 +4,7 @@ export const signup = (userData) => {
          method: 'POST',
          headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'https://reactventure.herokuapp.com'
+            'Access-Control-Allow-Origin': '*'
          },
          credentials: "include",
          body: JSON.stringify({user: userData})
@@ -36,7 +36,7 @@ export const login = (userData, history) => {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
-            'Access-Control-Allow-Origin': 'https://reactventure.herokuapp.com'
+            'Access-Control-Allow-Origin': '*'
          },
          credentials: 'include',
          body: JSON.stringify(userData)
@@ -65,7 +65,7 @@ export const checkLoggedIn = () => {
       fetch(`https://reactventure-backend.herokuapp.com/api/v1/logged_in`, {
          credentials: 'include',
          headers: {
-            'Access-Control-Allow-Origin': 'https://reactventure.herokuapp.com'
+            'Access-Control-Allow-Origin': '*'
          }
       })
       .then(res => res.json())
@@ -85,7 +85,7 @@ export const logout = () => {
          method: "DELETE",
          credentials: "include",
          headers: {
-            'Access-Control-Allow-Origin': 'https://reactventure.herokuapp.com'
+            'Access-Control-Allow-Origin': '*'
          }
       })
       .then(res => res.json())
@@ -99,7 +99,7 @@ export const save = (user, hist=[], inventory=[], knownObjects=['crowbar','door'
          method: 'POST',
          headers: {
             "Content-Type": "application/json",
-            'Access-Control-Allow-Origin': 'https://reactventure.herokuapp.com'
+            'Access-Control-Allow-Origin': '*'
          },
          credentials: 'include',
          body: JSON.stringify({
@@ -136,7 +136,7 @@ export const retrieve = (user) => {
          method: "GET",
          headers: {
             "Content-Type": "application/json",
-            'Access-Control-Allow-Origin': 'https://reactventure.herokuapp.com',
+            'Access-Control-Allow-Origin': '*',
             Accept: "application/json"
          }
       })
