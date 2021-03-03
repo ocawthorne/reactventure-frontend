@@ -3,7 +3,8 @@ export const signup = (userData) => {
       fetch(`https://reactventure-backend.herokuapp.com/api/v1/users`, {
          method: 'POST',
          headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': 'https://reactventure.herokuapp.com'
          },
          credentials: "include",
          body: JSON.stringify({user: userData})
@@ -35,6 +36,7 @@ export const login = (userData, history) => {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
+            'Access-Control-Allow-Origin': 'https://reactventure.herokuapp.com'
          },
          credentials: 'include',
          body: JSON.stringify(userData)
@@ -61,7 +63,10 @@ export const login = (userData, history) => {
 export const checkLoggedIn = () => {
    return dispatch => {
       fetch(`https://reactventure-backend.herokuapp.com/api/v1/logged_in`, {
-         credentials: 'include'
+         credentials: 'include',
+         headers: {
+            'Access-Control-Allow-Origin': 'https://reactventure.herokuapp.com'
+         }
       })
       .then(res => res.json())
       .then(data => dispatch({
@@ -78,7 +83,10 @@ export const logout = () => {
    return dispatch => {
       fetch(`https://reactventure-backend.herokuapp.com/api/v1/logout`, {
          method: "DELETE",
-         credentials: "include"
+         credentials: "include",
+         headers: {
+            'Access-Control-Allow-Origin': 'https://reactventure.herokuapp.com'
+         }
       })
       .then(res => res.json())
       .then(data => dispatch({type: "LOGOUT_SUCCESS"}))
@@ -91,6 +99,7 @@ export const save = (user, hist=[], inventory=[], knownObjects=['crowbar','door'
          method: 'POST',
          headers: {
             "Content-Type": "application/json",
+            'Access-Control-Allow-Origin': 'https://reactventure.herokuapp.com'
          },
          credentials: 'include',
          body: JSON.stringify({
@@ -127,6 +136,7 @@ export const retrieve = (user) => {
          method: "GET",
          headers: {
             "Content-Type": "application/json",
+            'Access-Control-Allow-Origin': 'https://reactventure.herokuapp.com',
             Accept: "application/json"
          }
       })
