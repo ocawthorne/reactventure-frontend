@@ -4,7 +4,8 @@ export const signup = (userData) => {
          method: 'POST',
          headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS'
          },
          credentials: "include",
          body: JSON.stringify({user: userData})
@@ -36,7 +37,8 @@ export const login = (userData, history) => {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
-            'Access-Control-Allow-Origin': '*'
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS'
          },
          credentials: 'include',
          body: JSON.stringify(userData)
@@ -65,7 +67,8 @@ export const checkLoggedIn = () => {
       fetch(`https://reactventure-backend.herokuapp.com/api/v1/logged_in`, {
          credentials: 'include',
          headers: {
-            'Access-Control-Allow-Origin': '*'
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS'
          }
       })
       .then(res => res.json())
@@ -85,7 +88,8 @@ export const logout = () => {
          method: "DELETE",
          credentials: "include",
          headers: {
-            'Access-Control-Allow-Origin': '*'
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS'
          }
       })
       .then(res => res.json())
@@ -99,7 +103,8 @@ export const save = (user, hist=[], inventory=[], knownObjects=['crowbar','door'
          method: 'POST',
          headers: {
             "Content-Type": "application/json",
-            'Access-Control-Allow-Origin': '*'
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS'
          },
          credentials: 'include',
          body: JSON.stringify({
@@ -137,6 +142,7 @@ export const retrieve = (user) => {
          headers: {
             "Content-Type": "application/json",
             'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS',
             Accept: "application/json"
          }
       })
