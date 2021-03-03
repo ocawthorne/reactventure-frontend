@@ -23,7 +23,7 @@ const prayDialogues = [
 
 const defaultState = {
    //! Inventory-related state
-   currentUser: {},    //? When a login is prompted, this value will be the user ID.
+   // currentUser: '',    //? When a login is prompted, this value will be the user ID.
    allEntities: [],
    allEntityInteractions: [],
    isLoading: false,
@@ -49,11 +49,12 @@ function aHNC(state, notification) { // Add History No Change (aHNC)
 }
 
 export const commandReducer = (state=defaultState, action) => {
+   debugger
    switch (action.type) {
       case 'UPDATED_COMMAND':
          return {...state, command: action.command}
       case 'SUBMITTED_COMMAND':
-         if (state.currentUser.uniqueEvents.completedGame) {
+         if (state.uniqueEvents.completedGame) {
             return aHNC(state, `Another room lies ahead, but my eyes haven't adapted to the light yet\nTO BE CONTINUED...`)
          }
          let cmdSplit = action.command.split(" ")
@@ -193,7 +194,7 @@ export const commandReducer = (state=defaultState, action) => {
       case "USER_HISTORY_FETCH_SUCCESS":
          return {
             ...state,
-            currentUser: action.payload.currentUser,
+            currentUser: action.payload.user,
             userHistory: action.payload.userHistory,
             userObjects: action.payload.userObjects,
             knownObjects: action.payload.knownObjects,
