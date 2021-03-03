@@ -7,7 +7,6 @@ class Welcome extends React.Component {
    saveProgress = () => {
       this.props.save(
          this.props.user,
-
          this.props.userHistory,
          this.props.inventory,
          this.props.knownObjects,
@@ -20,7 +19,6 @@ class Welcome extends React.Component {
    logoutConfirm = () => {
       if (window.confirm('Are you sure you wish to log out? All unsaved progress will be lost!')) {
          this.props.logout()
-         this.props.save({})
       }
    }
 
@@ -42,6 +40,7 @@ const mapStateToProps = state => {
       user: state.auth.currentUser,
 
       userHistory: state.commands.userHistory,
+      userObjects: state.commands.userObjects,
       inventory: state.commands.userObjects,
       knownObjects: state.commands.knownObjects,
       brokenObjects: state.commands.brokenObjects,
