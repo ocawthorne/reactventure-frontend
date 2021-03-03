@@ -99,6 +99,7 @@ export const save = (user, hist=[], inventory=[], knownObjects=['crowbar','door'
             "Content-Type": "application/json",
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS',
+            Accept: "application/json"
          },
          credentials: 'include',
          body: JSON.stringify({
