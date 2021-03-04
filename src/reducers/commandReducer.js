@@ -200,6 +200,8 @@ export const commandReducer = (state=defaultState, action) => {
             brokenObjects: action.payload.brokenObjects,
             uniqueEvents: action.payload.uniqueEvents
          }
+      case "CLEARED_HISTORY":
+         return defaultState
       default:
          return state
    }

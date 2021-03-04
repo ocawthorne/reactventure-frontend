@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { checkLoggedIn, logout, save, retrieve } from '../actions/auth'
+import { clearHistory } from '../actions/entryField'
 
 class Welcome extends React.Component {
 
@@ -20,7 +21,7 @@ class Welcome extends React.Component {
    logoutConfirm = () => {
       if (window.confirm('Are you sure you wish to log out? All unsaved progress will be lost!')) {
          this.props.logout()
-         this.props.save({})
+         this.props.clearHistory()
       }
    }
 
