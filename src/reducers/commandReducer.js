@@ -24,8 +24,8 @@ const prayDialogues = [
 const defaultState = {
    //! Inventory-related state
    // currentUser: '',    //? When a login is prompted, this value will be the user ID.
-   // allEntities: [],
-   // allEntityInteractions: [],
+   allEntities: [],
+   allEntityInteractions: [],
    isLoading: false,
    
    userObjects: [],    //? Starting empty at the beginning of the game, this is populated through 'get x' commands.
@@ -202,7 +202,7 @@ export const commandReducer = (state=defaultState, action) => {
             uniqueEvents: action.payload.uniqueEvents
          }
       case "CLEARED_HISTORY":
-         return defaultState
+         return {...state, userObjects: [], userHistory: []}
       default:
          return state
    }
