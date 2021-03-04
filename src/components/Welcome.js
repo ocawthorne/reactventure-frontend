@@ -50,4 +50,4 @@ const mapStateToProps = state => {
    }
 }
 
-export default connect(mapStateToProps, { checkLoggedIn, logout, save, retrieve })(Welcome)
+export default connect(mapStateToProps, { checkLoggedIn, logout, save, retrieve, clearHistory })(Welcome)
