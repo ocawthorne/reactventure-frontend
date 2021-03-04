@@ -68,6 +68,7 @@ export const commandReducer = (state=defaultState, action) => {
                } else if (state.userObjects.includes(item)) {
                   return aHNC(state, `I already have that!`)
                } else {
+                  console.log(state.allEntities)
                   if (state.allEntities.filter(obj => obj.name === item)[0].obtainable) {
                      let notification = `I picked up the ${item}.`
                      return {...state, userObjects: [...state.userObjects, item], userHistory: [...history, `> ${action.command}\n${notification}\n `]}
