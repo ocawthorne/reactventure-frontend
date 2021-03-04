@@ -147,7 +147,7 @@ export const retrieve = (user) => {
                userObjects: data.inventory,
                knownObjects: data.known_objects,
                brokenObjects: data.broken_objects,
-               unique_events: data.uniqueEvents
+               uniqueEvents: data.unique_events
                }
             })
       )
