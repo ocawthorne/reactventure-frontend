@@ -112,11 +112,12 @@ export const save = (user, hist=[], inventory=[], knownObjects=['crowbar','door'
          dispatch({
             type: "USER_HISTORY_FETCH_SUCCESS",
             payload: {
-               currentUser: {...user, uniqueEvents},
+               currentUser: user,
                userHistory: hist,
                userObjects: inventory,
                knownObjects,
-               brokenObjects
+               brokenObjects,
+               uniqueEvents
             }
          })
       })

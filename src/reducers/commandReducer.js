@@ -54,7 +54,7 @@ export const commandReducer = (state=defaultState, action) => {
          return {...state, command: action.command}
       case 'SUBMITTED_COMMAND':
          if (state.uniqueEvents.completedGame) {
-            return aHNC(state, `Another room lies ahead, but my eyes haven't adapted to the light yet.\nTO BE CONTINUED...`)
+            return aHNC(state, `Another room lies ahead, but my eyes haven't adapted to the light yet\nTO BE CONTINUED...`)
          }
          let cmdSplit = action.command.split(" ")
          let history = state.userHistory
@@ -200,8 +200,6 @@ export const commandReducer = (state=defaultState, action) => {
             brokenObjects: action.payload.brokenObjects,
             uniqueEvents: action.payload.uniqueEvents
          }
-      case "CLEARED_HISTORY":
-         return {...defaultState}
       default:
          return state
    }
