@@ -18,8 +18,7 @@ export const authReducer = (state={loggedIn: false, currentUser: {}}, action) =>
             ...state,
             loggedIn: false,
             currentUser: {},
-            userHistory: [],
-            userObjects: []
+            userHistory: []
          }
       default:
          return state
