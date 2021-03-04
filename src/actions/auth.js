@@ -87,7 +87,7 @@ export const logout = () => {
          credentials: "include"
       })
       .then(res => res.json())
-      .then(data => dispatch({type: "LOGOUT_SUCCESS"}))
+      .then(data => dispatch({type: "LOGOUT_SUCCESS",}))
    }
 }
 

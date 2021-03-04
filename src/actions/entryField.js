@@ -12,3 +12,9 @@ export const submitEntryField = (command) => {
       randomIndex: Math.floor(Math.random()*5)
    }
 } 
+
+export const clearHistory = () => {
+   return {
+      type: "CLEARED_HISTORY"
+   }
+} 
